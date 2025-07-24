@@ -13,7 +13,20 @@ requires = ["hatchling"]
 channels = ["https://prefix.dev/conda-forge"]
 platforms = ["linux-64", "osx-arm64"]
 
+[tool.pixi.feature.docs.dependencies]
+mkdocs = "*"
+mkdocs-material = "*"
+mkdocs-include-markdown-plugin = "*"
+mkdocstrings = {version = "*", extras = ["python"]}
+jupyter-book = "*"
+sphinx = "*"
+
 [tool.pixi.pypi-dependencies]
 d3_project_template = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+docs-mkdocs-serve = "cd docs/mkdocs && mkdocs serve"
+docs-mkdocs-build = "cd docs/mkdocs && mkdocs build"
+docs-jupyter-book-build = "cd docs && jupyter-book build jupyter-book/"
+docs-jupyter-book-serve = "cd docs && jupyter-book build jupyter-book/ --open"
+docs-clean = "rm -rf docs/site docs/jupyter-book/_build"
