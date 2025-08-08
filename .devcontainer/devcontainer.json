@@ -1,23 +1,34 @@
 {
-    "name": "D3 Project Dev",
-    "image": "ghcr.io/hazardos-ai/base:latest",
-    "features": {},
+    "name": "D3 Project Template Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
     "customizations": {
         "vscode": {
             "settings": {
-                "python.defaultInterpreterPath": "/usr/local/bin/python",
-                "editor.formatOnSave": true,
-                "python.formatting.provider": "black",
-                "python.linting.enabled": true,
-                "python.linting.pylintEnabled": true
+                "workbench.editorAssociations": {
+                    "*.md": "vscode.markdown.preview.editor"
+                }
             },
             "extensions": [
-                "ms-python.python",
                 "ms-toolsai.jupyter",
-                "ms-python.vscode-pylance",
-                "ms-python.black-formatter"
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "jjjermiah.pixi-vscode"
             ]
         }
     },
-    "remoteUser": "root"
+    "features": {},
+    "mounts": [
+        "source=${localWorkspaceFolderBasename}-pixi,target=${containerWorkspaceFolder}/.pixi,type=volume"
+    ],
+    "onCreateCommand": ".devcontainer/onCreate.sh",
+    "updateContentCommand": ".devcontainer/updateContent.sh",
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "16gb",
+        "storage": "32gb"
+    }
 }
