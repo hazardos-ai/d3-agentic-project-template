@@ -1,7 +1,5 @@
 # Agent
 
-## Details
-
 - **Version:** 1.0.0
 - **Author:** Cordero Core
 - **Date:** September 13, 2025
