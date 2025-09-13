@@ -1,4 +1,12 @@
-# Agent Instructions
+# Agent
+
+## Details
+
+**Version:** 1.0.0
+**Author:** Cordero Core
+**Date:** September 13, 2025
+
+## Instructions
 
 The main developer documentation lives in the `$PACKAGE_NAME/docs` directory, where `$PACKAGE_NAME` is the name of the package. The following points summarize how to set up the environment, run checks, build docs and follow the PR workflow.
 
