@@ -19,3 +19,6 @@ So, the preferred order of operations for new features:
 - Deliver feature
 - Publish documentation
 - Increment versions
+
+### Research Software Engineering
+Research software engineering (RSE) best practices emphasize readability, maintainability, reproducibility, and collaboration through techniques like using version control (Git), writing clean and modular code, comprehensive testing and documentation, engaging in code reviews, and managing development with a structured life cycle.
