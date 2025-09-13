@@ -1,0 +1,26 @@
+# Generic Agent Configuration (Template)
+
+strategy:
+  name: "{{ AgentSlug }}"
+  goal: "{{ AgentPurpose }}"
+
+assembly:
+  max_output_length: 4000
+  min_relevance_threshold: 0.3
+  max_sections: 5
+
+quality:
+  min_content_length: 500
+  diversity_boost_factor: 0.05
+  section_count_penalty: true
+
+llm:
+  # Suggested defaults; override per environment
+  planner_model: "{{ planner_model | default('openrouter/llama-3-70b-instruct') }}"
+  generator_model: "{{ generator_model | default('openrouter/claude-3.5-sonnet') }}"
+  classifier_model: "{{ classifier_model | default('openrouter/mistral-7b-instruct') }}"
+  embedder: "{{ embedder | default('sentence-transformers/all-MiniLM-L6-v2') }}"
+
+logging:
+  level: "INFO"
+  structured: true
